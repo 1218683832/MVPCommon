@@ -23,4 +23,6 @@
     <dimen name="text_14sp">14sp</dimen><!-- 正文/按钮文字 -->
     <dimen name="text_13sp">13sp</dimen>
     <dimen name="text_12sp">12sp</dimen><!-- 小字提示 -->
+    <dimen name="text_11sp">11sp</dimen><!-- 小字提示 -->
+    <dimen name="text_10sp">10sp</dimen><!-- 小字提示 -->
 </resources>

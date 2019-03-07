@@ -36,7 +36,10 @@ import butterknife.Unbinder;
  */
 public abstract class BaseActivity extends AppCompatActivity {
 
-	protected static final String TAG = "BaseActivity";
+	/**
+	 * 当前界面对应的Activity名称
+	 */
+	protected static String TAG;
 
 	/**
 	 * <b>属性功能描述:</b><br>
@@ -77,6 +80,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		TAG = this.getClass().getSimpleName();// 当前界面对应的Activity名称
 		ABLog.i(TAG, "onCreate");
 		super.onCreate(savedInstanceState);
 		int layoutId = layoutId();

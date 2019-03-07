@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="color_E5E5E5_gray">#E5E5E5</color>
     <color name="color_000000_black">#000000</color> <!-- 黑色 -->
     <color name="color_ffffff_white">#ffffff</color> <!-- 白色 -->
     <color name="color_808080_gray">#808080</color> <!-- 灰色 -->

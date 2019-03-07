@@ -11,7 +11,13 @@ android {
         versionName rootProject.ext.android.versionName //版本名
         multiDexEnabled rootProject.ext.android.multiDexEnabled //multiDex突破超过65535方法数
         archivesBaseName = "androidbase-$versionName"//指定打包成Jar文件时候的文件名称
+        multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath true
+            }
+        }
     }
 
     buildTypes {//build类型,除了默认的构建版本，还可以创建自己的构建版本

@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import com.mrrun.lib.androidbase.base.adapter.AdapterInterface;
 import com.mrrun.lib.androidbase.base.adapter.ViewBindEventImp;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -26,18 +27,28 @@ public abstract class BaseSimpleAdapter<T, VH extends BaseSimpleAdapter.ViewHold
 
     protected LayoutInflater mLayoutInflater;
 
-    protected List<T> mDatas;
+    protected List<T> mDatas = new ArrayList<>();
 
     protected int mLayoutId;
 
     ViewBindEventImp mViewBindEventImp;
 
-    public BaseSimpleAdapter(Context context, List<T> datas, int layoutId) {
+    public BaseSimpleAdapter(Context context, int layoutId) {
         this.mContext = context;
-        this.mDatas = datas;
         this.mLayoutInflater = LayoutInflater.from(mContext);
         this.mLayoutId = layoutId;
         this.mViewBindEventImp = new ViewBindEventImp();
+    }
+
+    /**
+     * 向Adapter中添加一条数据
+     *
+     * @param data
+     */
+    public final void addItem(T data) {
+        if (mDatas != null) {
+            mDatas.add(data);
+        }
     }
 
     /**

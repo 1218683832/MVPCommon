@@ -14,7 +14,7 @@ import java.util.Stack;
  * 
  * <ol>
  * <b>用法:</b>
- * <li>获取Activity栈管理实例调用{@link AppManager#getInstance()}方法
+ * <li>获取Activity栈管理实例调用{@link AppManager#getAppManager()}方法
  * <li>在Activity的onCreate()方法中调用{@link #addActivity(Activity)}方法</li>
  * <li>只退出当前Activity时在onDestroy()中调用{@link #finishActivity(Activity)}</li>
  * <li>退出应用程序调用{@link #AppExit(Context)}</li>
@@ -27,7 +27,7 @@ public class AppManager {
 
 	protected static final String TAG = "AppManager";
 
-	private Stack<Activity> activityStack = new Stack<Activity>();
+	private static Stack<Activity> activityStack = new Stack<Activity>();
 
 	private static AppManager instance;
 
@@ -97,7 +97,6 @@ public class AppManager {
 			if (null != activity) {
 				activity.finish();
 			}
-
 		}
 		activityStack.clear();
 	}
